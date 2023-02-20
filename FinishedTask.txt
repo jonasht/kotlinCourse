@@ -1,0 +1,47 @@
+class Hero {
+    var name: String = "Jon"
+    var life: Int = 3
+    var level: Int = 1
+    var xp: Int = 0
+
+    var items: MutableList<String> = mutableListOf()
+    
+    var status: String = "alive"
+
+    fun getItem(item: String) {
+        items.add(item)
+
+    }
+    fun dropItem(item:String) {
+    	items.remove(item)
+
+    }
+    fun decreaseLife() {
+        
+        life--
+        if (life == 0){
+            status = "dead"
+        }
+        
+    }
+    fun increaseLife() {
+        life++
+        
+    }
+    fun increaseXp(n:Int) {
+		xp += n
+        if (xp == 25 || xp == 50 || xp==100 && xp < 100){
+
+            level++
+    	}
+    }
+    fun printStatus() {
+        println("name:"+name)
+        println("life: " + life)
+        println("level: "+ level)
+        println("xp: "+xp)
+        print("items: "+items)
+        println("items: ")
+        println("status: "+status)
+    }
+}
